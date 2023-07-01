@@ -1,0 +1,34 @@
+﻿@using MediLab.Models;
+@model List<Clinic>
+
+@{
+    ViewData["Title"] = "Index";
+   
+}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div  class="container">
+    <div class="card d-flex flex-row flex-wrap">
+        @foreach (Clinic clinic in Model)
+        {
+            <div class="card" style="width: 18rem; margin: 10px;">
+                <img src="~/cdn.doctortap.az/uploads/clinic/@clinic.ImagePath" alt="Berlin Ailə Və Uşaq Klinikasi" title="Berlin Ailə Və Uşaq Klinikasi">
+                <div class="card-body">
+                    <h5 class="card-title">@clinic.Name</h5>
+                    <p class="card-text">@clinic.Adress</p>
+                </div>
+                <a type="button" asp-action="Index" asp-controller="AboutClinic" asp-route-id="@clinic.Id" class="btn btn-primary">Ətrafli Məlumat</a>
+            </div>
+        }
+    </div>
+</div>
+
+

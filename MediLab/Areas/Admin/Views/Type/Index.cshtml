@@ -1,0 +1,87 @@
+﻿@using MediLab.Models;
+@model List<TypeOfService>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<style>
+    .container-fluid {
+        background-color: #e0e0e0; /* Arka plan rengi */
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    table {
+        background-color: #ffffff; /* Tablo arka plan rengi */
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        border-collapse: collapse;
+        float: right; /* Tabloyu sağa hizala */
+    }
+
+    th,
+    td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+
+    th {
+        background-color: #f8f9fa; /* Tablo başlığı arka plan rengi */
+    }
+
+    img {
+        max-height: 100px; /* Resimlerin maksimum yüksekliği */
+        width: auto;
+    }
+</style>
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="d-flex justify-content-end mb-2">
+            <a class="btn btn-success text-light" asp-area="Admin" asp-controller="Type" asp-action="Create">Create </a>
+        </div>
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Number</th>
+                                <th scope="col">Şöbənin adı</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (TypeOfService type in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@type.Name</td>
+                                    
+
+                                    
+                                    <td>
+                                        <a class="btn btn-warning" asp-area="Admin" asp-controller="Type" asp-action="Update" asp-route-id="@type.Id">
+                                            <i class="bi bi-pencil-fill"></i> Update
+                                        </a>
+                                        <a class="btn btn-danger" asp-area="Admin" asp-controller="Type" asp-action="Delete" asp-route-id="@type.Id">
+                                            <i class="bi bi-trash-fill"></i> Delete
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                count++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

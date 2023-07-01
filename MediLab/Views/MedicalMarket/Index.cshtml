@@ -1,0 +1,118 @@
+﻿
+@model List<MedicalMarket>
+@{
+    ViewData["Title"] = "Index";
+}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<html>
+<head>
+    <title>Tıbbi Market</title>
+    <style>
+        .product-card {
+            width: 300px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            .product-card img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .product-button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <style>
+        .header {
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+            .header::after {
+                content: "";
+                display: block;
+                height: 3px;
+                background-color: #fff;
+                margin-top: 10px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50px;
+                border-radius: 10px;
+            }
+    </style>
+
+    <div class="header">
+        <h1>Sağlamlığınız üçün ən yaxşı seçimləri təklif edirik</h1>
+    </div>
+    <div class="col-md-12">
+        <div class="card d-flex flex-row flex-wrap mx-3 my-3">
+            @foreach (var market in Model)
+            {
+                <div class="product-card mb-3 mx-3">
+                    <img src="~/cdn.doctortap.az/uploads/product/small/@market.ImagePath" alt="Product Image">
+                    <h3 class="product-title">Məhsulun adı: @market.Name</h3>
+
+
+                    <p class="product-price"> Məhsulun qiyməti:@market.Price AZN</p>
+                    <a asp-controller="Basket" asp-action="AddBasket" asp-route-id="@market.Id" class="product-button">Səbətə At</a>
+                </div>
+            }
+         
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+

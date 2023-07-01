@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<style>
+.complaints-section {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.complaints-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.complaints-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+        .header::after
+
+    
+       
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
+<style>
+    .header {
+        background-color: #55acee;
+        text-align: center;
+        padding: 20px;
+    }
+
+        .header h1 {
+            color: #fff;
+            margin: 0;
+        }
+</style>
+<div class="header">
+    <h1>Müştəri Məmnuniyyəti</h1>
+</div>
+<div class="complaints-section">
+    <h2>Şikayet ve Teklifler</h2>
+    <form class="complaints-form">
+        <div class="form-group">
+            <label for="name">Adınız:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-posta Adresiniz:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Konu:</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Mesajınız:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Gönder</button>
+    </form>
+</div>
+
+

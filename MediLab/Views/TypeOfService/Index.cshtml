@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="section-title">
+    <h2>Şöbələr</h2>
+
+</div>
+
+<nav class="navbar bg-primary border-bottom border-bottom-dark" data-bs-theme="dark">
+    @foreach (var services in Model)
+    {
+        <ul class="navbar">
+            <li>
+                <a href="#" data-filter="@services.Name.Trim().ToLower()" style="color: white;">
+                    @services.Name
+                </a>
+            </li>
+        </ul>
+
+        <div class="col-md-12">
+            <div class="card-group">
+                @foreach (Doctor doctor in services.Doctors)
+                {
+                    <div class="card @doctor.TypeOfService.Name.ToLower().Trim()" style="width: 18rem; margin: 10px; background-color: white;">
+                        <img src="@doctor.ImagePath" class="card-img-top" style="object-fit: cover; height: 300px; width: 230px;">
+                        <div class="card-body">
+                            <h5 class="card-title">@doctor.FullName</h5>
+                            <h5 class="card-title">@doctor.ClinicId</h5>
+                            <p class="card-text">@doctor.TypeOfService.Name</p>
+                            <p class="card-text">@doctor.WorkExperience</p>
+                        </div>
+                        <a type="button" href="@Url.Action("Index", "AboutDoctor")" class="btn btn-primary">Ətrafli Məlumat</a>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</nav>
+
+</nav>

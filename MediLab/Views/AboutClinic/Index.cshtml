@@ -1,0 +1,147 @@
+﻿@model List<Doctor>
+@{
+    ViewData["Title"] = "Index";
+}
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="section-title">
+    <h2>Həkimlərimiz</h2>
+
+</div>
+<style>
+    .doctor-card {
+        display: flex;
+        align-items: flex-start;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        margin-bottom: 20px;
+    }
+
+        .doctor-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 4px solid #ccc;
+            margin-right: 20px;
+        }
+
+    .doctor-info {
+        flex-grow: 1;
+    }
+
+    .doctor-card h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .doctor-card p {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .appointment-form {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+        .appointment-form h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .appointment-form label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .appointment-form input[type="text"],
+        .appointment-form input[type="email"],
+        .appointment-form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .appointment-form textarea {
+            resize: vertical;
+        }
+
+        .appointment-form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .appointment-form button:hover {
+                background-color: #0056b3;
+            }
+
+    .thank-you {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+
+
+
+<p class="thank-you"> Bizi seçdiyiniz üçün təşəkkür edirik!</p>
+
+
+@foreach (Doctor hekim in Model)
+{
+    <div class="doctor-card">
+        <img src="~/cdn.doctortap.az/uploads/doctor/@hekim.ImagePath" alt="Doktorun İsmi">
+        <div class="doctor-info">
+            <h3>@hekim.FullName</h3>
+            <p>İş təcrübəsi: @hekim.WorkExperience il</p>
+            <p>Haqqında: @hekim.Description</p>
+
+        </div>
+    </div>
+
+
+
+
+}
+
+   
+
+
+
+   
+    <div id="content">
+        <h1>Haqqımızda</h1>
+        <p>Həkim-pasiyent münasibətlərində yeni dövrə başlamaq məqsədilə 2019-cu il, may ayında fəaliyyətə başlamışdır. Kardiologiya, pediatriya, stomatologiya, terapiya, dietologiya, laboratoriya, USM, psixologiya üzrə xidmət göstərən Megapol Sağlamlıq Mərkəzində hər bir müraciətçiyə individual yanaşılır. Canlı növbə olmadan (təcili müraciətlər istisna olmaqla) həkim qəbuluna gələn şəxslərin sağlamlıq vəziyyətləri nəzarət altında saxlanılaraq sonadək təqib edilir. Mərkəzimizin həkimləri tərəfindən sağlamlıqla bağlı bütün suallar həm canlı, həm də onlayn şəkildə cavablandırılaraq, müraciətçi müvafiq istiqamətlərdə yönləndirilir. Sağlamlıqla bağlı narahatlıqlar, gözlənilməz sağlamlıq problemləri ilə müraciətçilərin xidmətində olan Megapol Sağlamlıq Mərkəzinin əsas məqsədi bədən və ruh sağlamlığınızı qorumaq, müalicə etmək, sağlamlıqla bağlı öyrədici və yönləndirici xidmət göstərməkdir.</p>
+    </div>
+
+

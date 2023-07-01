@@ -1,0 +1,214 @@
+﻿@model List<BasketItemVM>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@*<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .table td img {
+            height: 100px;
+        }
+
+        .table td.text-center {
+            text-align: center;
+        }
+
+        .table td.text-end {
+            text-align: right;
+        }
+
+        .table tbody tr:hover {
+            background-color: #eaf2f9;
+        }
+</style>
+
+<div class="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Məhsulun şəkli</th>
+            <th scope="col">Məhsulun adı</th>
+            <th scope="col">Məbləğ</th>
+            <th scope="col">Sayı</th>
+            <th scope="col">Toplam məbləğ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (BasketItemVM basket in Model)
+        {
+            <tr>
+                <th>@count</th>
+                <td><img src="~/cdn.doctortap.az/uploads/product/small/@basket.ImagePath"></td>
+                <td>@basket.Name</td>
+                <td>@basket.Price</td>
+                <td>@basket.ServiceCount</td>
+                <td>@(@basket.Price * @basket.ServiceCount)</td>
+            </tr>
+            count++;
+        }
+    </tbody>
+</table>
+    <style>
+        .total-price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #fff;
+            background-color: #3366cc;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+
+    <p class="total-price">Toplam Məbləğ: @Model.Sum(s=>s.Price*s.ServiceCount) AZN</p>
+</div>*@
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .table td img {
+            height: 100px;
+        }
+
+        .table td.text-center {
+            text-align: center;
+        }
+
+        .table td.text-end {
+            text-align: right;
+        }
+
+        .table tbody tr:hover {
+            background-color: #eaf2f9;
+        }
+
+    .total-price {
+        font-weight: bold;
+        font-size: 18px;
+        color: #fff;
+        background-color: #3366cc;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .quantity-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+        .quantity-buttons button {
+            font-size: 16px;
+            padding: 5px 10px;
+            margin: 0 2px;
+            background-color: #f5f5f5;
+            border: none;
+            cursor: pointer;
+        }
+</style>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Məhsulun şəkli</th>
+                <th scope="col">Məhsulun adı</th>
+                <th scope="col">Məbləğ</th>
+                <th scope="col">Sayı</th>
+                <th scope="col">Toplam məbləğ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (BasketItemVM basket in Model)
+            {
+                <tr>
+                    <th>@count</th>
+                    <td><img src="~/cdn.doctortap.az/uploads/product/small/@basket.ImagePath"></td>
+                    <td>@basket.Name</td>
+                    <td>@basket.Price</td>
+                    <td>
+                        <div class="quantity-buttons">
+                            <button class="decrease-quantity" onclick="changeQuantity(this, -1, @basket.Price)">-</button>
+                            <span class="quantity">@basket.ServiceCount</span>
+                            <button class="increase-quantity" onclick="changeQuantity(this, 1, @basket.Price)">+</button>
+                        </div>
+                    </td>
+                    <td class="total-price">@(@basket.Price * @basket.ServiceCount)</td>
+                </tr>
+                count++;
+            }
+        </tbody>
+       
+    </table>
+    <style>
+        .total-price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #fff;
+            background-color: #3366cc;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+
+    <p class="total-price">Toplam Məbləğ: @Model.Sum(s=>s.Price*s.ServiceCount) AZN</p>
+</div>
+
+<script>
+    function changeQuantity(button, change, price) {
+        var quantityElement = button.parentNode.querySelector('.quantity');
+        var totalElement = button.parentNode.parentNode.parentNode.querySelector('.total-price');
+        var currentQuantity = parseInt(quantityElement.textContent);
+        var newQuantity = currentQuantity + change;
+
+        if (newQuantity >= 0) {
+            quantityElement.textContent = newQuantity;
+            totalElement.textContent = price * newQuantity;
+        }
+    }
+</script>

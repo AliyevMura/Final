@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Medilab   </title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/assets/img/favicon.png" rel="icon">
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    @*<link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">*@
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Medilab
+    * Updated: May 30 2023 with Bootstrap v5.3.0
+    * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-between">
+
+
+            <div class="contact-info d-flex align-items-center custom-contact-info">
+                <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">doctortap@gmail.com</a>
+                <i class="bi bi-phone"></i> Bizimlə Əlaqə: +994 70 722 30 44
+            </div>
+            <style>
+                .custom-contact-info {
+                    background-color: #f2f2f2;
+                    color: #333;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+
+                    .custom-contact-info i {
+                        margin-right: 5px;
+                    }
+
+                    .custom-contact-info a {
+                        color: #333;
+                        text-decoration: none;
+                    }
+
+                        .custom-contact-info a:hover {
+                            color: #666;
+                        }
+
+                .custom-contact-info {
+                    background-color: cornflowerblue;
+                    color: white;
+                }
+            </style>
+      
+            <div class="d-none d-lg-flex social-links align-items-center">
+                <a asp-controller="Basket" class="shopping-cart-icon">
+                    <i class="bi bi-cart-fill"></i>
+                </a>
+
+                <a href="#" class="twitter social-link"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook social-link"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram social-link"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin social-link"><i class="bi bi-linkedin"></i></a>
+             
+
+               
+
+
+            </div>
+
+            <style>
+                .social-links {
+                    margin-right: 10px;
+                }
+
+                .shopping-cart-icon {
+                    font-size: 24px;
+                    margin-right: 10px;
+                    color: #000;
+                }
+
+                .social-link {
+                    font-size: 24px;
+                    margin-right: 10px;
+                    color: #000;
+                }
+
+                    .social-link:hover {
+                        color: #007bff;
+                    }
+
+                }
+            </style>
+
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="~/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            @* <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Ana Səhifə</a></li>
+            <li><a class="nav-link scrollto " href="@Url.Action("Index","Doctor")">Həkimlər</a></li>
+            <li><a class="nav-link scrollto"  href="@Url.Action("Index","Clinic")">Klinikalar</a></li>
+            <li><a class="nav-link scrollto" href="@Url.Action("Index","MedicalMarket")">Tibbi market</a></li>
+            <li><a class="nav-link scrollto" href="#teklif">Şikayət və təkliflər</a></li>
+
+            <li class="dropdown">
+            <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="dropdown">
+            <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+            <ul>
+            <li><a href="#">Deep Drop Down 1</a></li>
+            <li><a href="#">Deep Drop Down 2</a></li>
+            <li><a href="#">Deep Drop Down 3</a></li>
+            <li><a href="#">Deep Drop Down 4</a></li>
+            <li><a href="#">Deep Drop Down 5</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Drop Down 2</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+            </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Əlaqə</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            *@
+            <style>
+                .custom-navbar {
+                    background-color: #f2f2f2;
+                    padding: 10px;
+                }
+
+                    .custom-navbar ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .custom-navbar li {
+                        display: inline-block;
+                        margin-right: 10px;
+                    }
+
+                    .custom-navbar a {
+                        color: #333;
+                        text-decoration: none;
+                        padding: 10px;
+                    }
+
+                        .custom-navbar a:hover {
+                            color: #666;
+                        }
+
+                    .custom-navbar .dropdown ul {
+                        display: none;
+                        position: absolute;
+                        background-color: #fff;
+                        padding: 10px;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .custom-navbar .dropdown:hover ul {
+                        display: block;
+                    }
+
+                    .custom-navbar .dropdown li {
+                        display: block;
+                        margin: 5px 0;
+                    }
+
+                    .custom-navbar .dropdown a {
+                        padding: 5px;
+                    }
+            </style>
+
+            <nav id="navbar" class="navbar order-last order-lg-0 custom-navbar">
+              
+                <ul>
+                    <li><a class="nav-link scrollto active"asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
+                    <li><a class="nav-link scrollto" asp-controller="Doctor" asp-action="Index">Həkimlər</a></li>
+                    <li><a class="nav-link scrollto" asp-controller="Clinic" asp-action="Index" >Klinikalar</a></li>
+                    <li><a class="nav-link scrollto" asp-controller="Medicalmarket" asp-action="Index">Tibbi market</a></li>
+                    <li><a class="nav-link scrollto" asp-controller="Teklifler" asp-action="Index">Şikayət və təkliflər</a></li>
+                   
+                    
+                   
+                    <li><a class="nav-link scrollto" href="@Url.Action("Index","Elaqe")">Əlaqə</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">@User.Identity.Name</a></li>
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="LogOut">Çıxış</a></li>
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="dropdown-menu">
+
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Login">Daxil ol</a></li>
+
+                        </ul>
+                    }
+                </div>
+            </nav><!-- .navbar -->
+
+
+
+        </div>
+    </header><!-- End Header -->
+    @RenderBody()
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Medilab</h3>
+                        <p>
+                            <strong>Ünvan:</strong> Abbas Mirzə Şərifzadə küçəsi <br>
+                            Baku<br>
+                            <br><br>
+                            <strong>Əlaqə:</strong> (012) 310 09 10<br>
+                            <strong>Əlaqə:</strong> (055) 500 96 00<br>
+                            <strong>Əlaqə:</strong> (051) 500 96 00<br>
+                        </p>
+                        <div class="cs_footer_social_icons">
+                            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Faydalı Linklər</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Həkimlər</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Klinikalar</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Tibbi market</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Şikayət və təkliflər</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Bizim xidmətlər</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Həkimlərin tapilmasi</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Klinikalarin tapılmasi</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Bizimlə asan əlaqə</a></li>
+
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Medilab</span></strong>.Bütün hüquqlar qorunur
+                </div>
+
+            </div>
+
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    @*<script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
